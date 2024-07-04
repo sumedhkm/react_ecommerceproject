@@ -9,7 +9,8 @@ import LoginSignup from './Components/LoginSignup';
 import './App.css';
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png';
-import women_banner from './Components/Assets/banner_women.png';
+import womens_banner from './Components/Assets/banner_womens.png';
+
 import kid_banner from './Components/Assets/banner_kids.png';
 
 function App() {
@@ -20,9 +21,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Shop />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/category/kids" element={<ShopCategory />} />
-          <Route path="/shop/category/mens" element={<ShopCategory  />} />
-          <Route path="/shop/category/women" element={<ShopCategory />} />
+          <Route path="/shop/category/kids" element={<ShopCategory banner={kid_banner} />} />
+          <Route path="/shop/category/mens" element={<ShopCategory banner={men_banner} />} />
+          <Route path="/shop/category/womens" element={<ShopCategory banner={womens_banner} />} />
+
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/card" element={<Card />} />
           <Route path="/login-signup" element={<LoginSignup />} />

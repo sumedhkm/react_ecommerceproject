@@ -1,12 +1,15 @@
-import React from 'react'
-import './ShopCategory.css'
+// src/Components/ShopCategory.js
 
-const ShopCategory = () => {
+import React from 'react';
+import './ShopCategory.css';
+
+const ShopCategory = ({ banner }) => {
   return (
     <div className='shopcategory'>
-
+      <img src={banner} alt='Category Banner' />
+      {/* Other content for ShopCategory */}
     </div>
-  )
-}
+  );
+};
 
-export  default ShopCategory;
+export default ShopCategory;
