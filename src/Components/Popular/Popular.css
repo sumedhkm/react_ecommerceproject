@@ -1,0 +1,32 @@
+/* Popular.css */
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 90vh;
+    padding: 20px;  /* Add padding for spacing */
+}
+
+.popular h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;  /* Center the heading */
+}
+
+.popular hr {
+    width: 100px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: #252525;
+}
+
+.popular-item {
+    margin-top: 30px;
+    display: grid;  /* Use CSS Grid for layout */
+    grid-template-columns: repeat(4, 1fr);  /* 4 columns */
+    gap: 20px;  /* Space between items */
+    width: 100%;  /* Full width of the parent container */
+    max-width: 1400px;  /* Set a max-width for larger screens */
+}
