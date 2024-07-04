@@ -4,7 +4,7 @@ import Offers from './Offers';
 import NewCollections from './NewCollections/NewCollections';
 import Popular from './Popular/Popular';
 import NewsLetter from './NewsLetter/NewsLetter';
-import Footer from './Footer/Footer'
+
 const Shop = () => {
   return (
     <div>
@@ -13,7 +13,7 @@ const Shop = () => {
        <Offers/>
        <NewCollections/>
        <NewsLetter />
-       <Footer />
+   
     </div>
   );
 };
