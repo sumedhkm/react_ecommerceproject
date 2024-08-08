@@ -13,7 +13,7 @@ const ShopCategory = ({ category,banner }) => {
  // const {all_product}=useContext(ShopContext)
   return (
     <div className='shopcategory'>
-      <img src={banner} alt='Category Banner' />
+      <img className="shopcategory-banner" src={banner} alt='Category Banner' />
      <div className='shopcategory-indexs'>
         <p>
             <span>
@@ -41,6 +41,9 @@ const ShopCategory = ({ category,banner }) => {
         }
       })
 }
+     </div>
+     <div className='shopcategory-loadmore'>
+Explore More
      </div>
     </div>
   );

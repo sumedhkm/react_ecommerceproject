@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';  // Import PropTypes for prop validation
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './Item.css';  // Import the CSS file for Item component styles
 
 const Item = ({ id, name, image, new_price, old_price }) => {
   return (
     <div className='item'>
-      <img src={image} alt={name} />  {/* Provide meaningful alt text */}
+      <Link to={`/product/${id}`}>
+        <img src={image} alt={name} />  {/* Provide meaningful alt text */}
+      </Link>
       <div className='item-info'>
         <p>{name}</p>  {/* Display the item name */}
         <div className='item-prices'>
           <div className='item-price-new'>
-           $ {new_price}  {/* Display the new price without $ */}
+            $ {new_price}  {/* Display the new price */}
           </div>
           {old_price && (
             <div className='item-price-old'>
-              ${old_price}  {/* Display the old price without $ */}
+              ${old_price}  {/* Display the old price */}
             </div>
           )}
         </div>
