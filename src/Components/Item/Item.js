@@ -7,7 +7,7 @@ const Item = ({ id, name, image, new_price, old_price }) => {
   return (
     <div className='item'>
       <Link to={`/product/${id}`}>
-        <img src={image} alt={name} />  {/* Provide meaningful alt text */}
+        <img onClick={window.scrollTo(0,0)}src={image} alt={name} />  {/* Provide meaningful alt text */}
       </Link>
       <div className='item-info'>
         <p>{name}</p>  {/* Display the item name */}

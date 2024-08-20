@@ -91,6 +91,15 @@
     outline: none;
     cursor: pointer;
   }
-  
+  .productdisplay-right-catgeory{
+    margin-top: 10px;
+
+
+
+}
+.productdisplay-right-catgeory span{
+    font-weight: 600;
+}
+
 
   

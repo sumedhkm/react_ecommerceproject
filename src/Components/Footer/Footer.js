@@ -1,4 +1,6 @@
 import React from 'react';
+import {  useLocation } from 'react-router-dom';
+
 import './Footer.css';
 import footerLogo from '../Assets/logo_big.png';
 import instagramIcon from '../Assets/instagram_icon.png';
@@ -6,6 +8,16 @@ import pinterestIcon from '../Assets/pintester_icon.png';
 import whatsappIcon from '../Assets/whatsapp_icon.png';
 
 const Footer = () => {
+
+  const location = useLocation();
+
+  const navbar = ['/loginsignup', '/register','/'];
+
+  if (navbar.includes(location.pathname)) {
+    return null;
+  }
+
+
   return (
     <div className='footer'>
       <div className='footer-logo'>
@@ -32,7 +44,7 @@ const Footer = () => {
       </div>
       <div className='footer-copyright'>
         <hr/>
-        <p>Copyright @ 2023- All Right Resvered</p>
+        <p>Copyright @ 2024- All Right Resvered</p>
       </div>
     </div>
   );

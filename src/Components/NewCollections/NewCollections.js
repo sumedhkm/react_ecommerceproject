@@ -13,8 +13,8 @@ const NewCollections = () => {
         id={item.id}
         name={item.name}  // Pass the name to Item component
         image={item.image}
-        new_price={item.new_price}
-        old_price={item.old_price}/>
+        new_price={item.new_price.toString()}
+        old_price={item.old_price.toString()}/>
       })}
     </div>
     </div>

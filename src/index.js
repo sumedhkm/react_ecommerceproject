@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import ShopContextProvider from './Components/ShopContext';
+import store from "./Components/Redux/Store"
+import { Provider } from 'react-redux';
+// import { AuthProvider } from './Components/Contexts/AuthContext'; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <ShopContextProvider>
+    {/* <AuthProvider> */}
+    <Provider store={store}>
       <App />
-      </ShopContextProvider>
+    </Provider>
+    {/* </AuthProvider> */}
   </React.StrictMode>
 );
 
-reportWebVitals();

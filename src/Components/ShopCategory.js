@@ -10,7 +10,8 @@ import { ShopContext } from './ShopContext';
 
 
 const ShopCategory = ({ category,banner }) => {
- // const {all_product}=useContext(ShopContext)
+//  const {all_product}=useContext(ShopContext)
+//  console.log(all_product);
   return (
     <div className='shopcategory'>
       <img className="shopcategory-banner" src={banner} alt='Category Banner' />
@@ -32,8 +33,8 @@ const ShopCategory = ({ category,banner }) => {
           id={item.id}
           name={item.name}  // Pass the name to Item component
           image={item.image}
-          new_price={item.new_price}
-          old_price={item.old_price}/>
+          new_price={item.new_price.toString()}
+          old_price={item.old_price.toString()}/>
 
         }
         else{

@@ -1,44 +1,73 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from './Assets/logo.png';
+import image from './Assets/images.png';
+
 import cart_icon from './Assets/cart_icon.png';
+import { AuthContext } from './Context';
 
 const Navbar = () => {
-  const [menu, setMenu] = useState('shop');
+  const { user, logout } = useContext(AuthContext);
+  const [menu, setMenu] = useState('');
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/'); 
+  };
+
+  const navbar = ['/loginsignup', '/register'];
+
+  if (navbar.includes(location.pathname)) {
+    return null;
+  }
 
   return (
     <div className='navbar'>
       <div className='nav-logo'>
-        <img src={logo} alt='' />
+        <img src={logo} alt='logo' />
         <p>SMITH</p>
       </div>
       <ul className='nav-menu'>
         <li onClick={() => setMenu('shop')} className={menu === 'shop' ? 'active' : ''}>
-          <Link to='/shop'>Shop</Link>
-          {menu === 'shop' ? <hr /> : <></>}
+          <Link to='/'>Shop</Link>
+          {menu === 'shop' && <hr />}
         </li>
         <li onClick={() => setMenu('mens')} className={menu === 'mens' ? 'active' : ''}>
-          <Link to='/shop/category/mens'>Men</Link>
-          {menu === 'mens' ? <hr /> : <></>}
+          <Link to='/category/mens'>Men</Link>
+          {menu === 'mens' && <hr />}
         </li>
         <li onClick={() => setMenu('womens')} className={menu === 'womens' ? 'active' : ''}>
-          <Link to='/shop/category/womens'>Women</Link>
-          {menu === 'womens' ? <hr /> : <></>}
+          <Link to='/category/womens'>Women</Link>
+          {menu === 'womens' && <hr />}
         </li>
         <li onClick={() => setMenu('kids')} className={menu === 'kids' ? 'active' : ''}>
-          <Link to='/shop/category/kids'>Kids</Link>
-          {menu === 'kids' ? <hr /> : <></>}
+          <Link to='/category/kids'>Kids</Link>
+          {menu === 'kids' && <hr />}
         </li>
       </ul>
       <div className='nav-login-cart'>
-        <Link to='/login-signup'>
-          <button>Login</button>
-        </Link>
         <Link to='/card'>
-          <img src={cart_icon} alt='' />
+          <img src={cart_icon} alt='Cart' />
         </Link>
-        <div className='nav-cart-count'>0</div>
+        {user ? (
+          <>
+            <Link to='/profile'>
+<span className='profile'><img src={image}/> </span>           </Link>
+            <button onClick={handleLogout}>Log Out</button>
+          </>
+        ) : (
+          <>
+            <Link to='/loginsignup'>
+              <button>Login</button>
+            </Link>
+            <Link to='/register'>
+              <button>Register</button>
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );

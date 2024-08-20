@@ -37,3 +37,26 @@
 .item:hover {
     transform: scale(1.05);  /* Slightly enlarge the item on hover */
 }
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .item {
+        width: 200px;  /* Adjust width for tablet screens */
+    }
+
+    .item-price-new, .item-price-old {
+        font-size: 12px;  /* Smaller font size for prices on tablet screens */
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    .item {
+        width: 100%;  /* Full width for mobile screens */
+        padding: 10px;  /* Increase padding for better touch target */
+    }
+
+    .item-price-new, .item-price-old {
+        font-size: 14px;  /* Slightly larger font size for better readability on mobile */
+    }
+}

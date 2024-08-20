@@ -9,14 +9,14 @@ const Popular = () => {
       <h1>POPULAR IN WOMAN</h1>
       <hr />
       <div className='popular-item'>
-        {data_product.map((item) => (
+        {data_product.map((item,i) => (
           <Item
             key={item.id}
             id={item.id}
             name={item.name}  // Pass the name to Item component
             image={item.image}
-            new_price={item.new_price}
-            old_price={item.old_price}
+            new_price={item.new_price.toString()}
+            old_price={item.old_price.toString()}
           />
         ))}
       </div>

@@ -27,6 +27,7 @@
 }
 .footer-social-icon{
     display: flex;
+    cursor: pointer;
     gap: 20px;
 
 }

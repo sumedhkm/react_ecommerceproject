@@ -1,21 +1,75 @@
-import React from 'react';
-import './LoginSignup.css'
-const LoginSignup = () => {
-  return <div className='loginsignup'>
-    <div className='loginsignup-container'>
-    <h1>Sign Up</h1>
-<div className='loginsignup-fields'>
-  <input type='text' placeholder='Your Name'/>
-  <input type='email' placeholder='Email Address'/>
-  <input type="password" placeholder='password'/>
-</div>
-<button>Continue</button>
-<p className='loginsignup-login'>Already have an account?<span>Login Here</span></p>
-<div className='loginsignup-agree'><input type='checkbox' name='' id=''/>
-<p>By continuing, i agree to the terms of use & privacy policy</p></div>
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
+import './LoginSignup.css';
+import Alert from '@mui/material/Alert';
+import { AuthContext } from './Context';
 
-    </div>
-  </div>;
+const Login = () => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const navigate = useNavigate();
+    const { login } = useContext(AuthContext);
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        setError('');
+        setSuccess(false);
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/api/login/', {
+                username,
+                password,
+            });
+            if (response.status === 200) {
+                const userData = {
+                    username: response.data.username,
+                    email: response.data.email,
+                };
+                login(userData);
+                setSuccess(true);
+                setTimeout(() => {
+                    navigate('/'); 
+                }, 1000);
+            }
+        } catch (error) {
+            console.error('Login failed:', error.response ? error.response.data : error.message);
+            setError('Invalid credentials!');
+        }
+    };
+
+    return (
+        <div className="containerlogin">
+            <h2>Login</h2>
+            <form onSubmit={handleLogin}>
+                <div>
+                    <label>Username:</label>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
+                <button type="submit">Login</button><br />
+            </form>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <Alert severity="success">Login successful!</Alert>}
+            <p>
+                Not Have Account? <Link to="/register"><span className='loginhere'>Register Here</span></Link>
+            </p>
+        </div>
+    );
 };
 
-export default LoginSignup;
+export default Login;
