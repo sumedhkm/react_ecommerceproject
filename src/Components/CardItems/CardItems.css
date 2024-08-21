@@ -1,3 +1,4 @@
+/* Base Styles */
 .carditems {
     margin: 100px 70px;
 }
@@ -52,7 +53,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-   
 }
 
 .cartitems-total-item {
@@ -75,35 +75,97 @@
 
 .carditems-promocode {
     flex: 1;
-   font-size: 16px;
-   font-weight: 500;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-
-.carditems-promobox{
+.carditems-promobox {
     width: 504px;
     margin-top: 15px;
     padding-left: 20px;
     height: 58px;
- 
 }
+
 .carditems-promobox input {
     border: none;
     outline: none;
     background: transparent;
-   font-size: 16px;
-   width: 330px;
-   height: 50px;
+    font-size: 16px;
+    width: 330px;
+    height: 50px;
 }
+
 .carditems-promobox button {
     width: 174px;
- height: 58px;
- margin-top: 10px;
+    height: 58px;
+    margin-top: 10px;
     background-color: black;
     color: #fff;
     border: none;
     cursor: pointer;
     font-size: 16px;
     margin-right: 20px;
-   
+}
+
+/* Media Query for Phones (up to 600px) */
+@media (max-width: 600px) {
+    .carditems {
+        margin: 20px 10px;
+    }
+
+    .carditem-format-main {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 20px;
+        font-size: 14px;
+    }
+
+    .carditem-format {
+        font-size: 14px;
+    }
+
+    .carticon-product-icon {
+        height: 50px;
+    }
+
+    .carditems-remove-icon {
+        width: 12px;
+        margin: 0px 20px;
+    }
+
+    .cartitems-quantity {
+        width: 50px;
+        height: 40px;
+    }
+
+    .carditems-down {
+        flex-direction: column;
+        margin: 40px 0px;
+        gap: 20px;
+    }
+
+    .carditems-total {
+        flex-direction: column;
+    }
+
+    .carditems-total button {
+        width: 100%;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .carditems-promobox {
+        width: 100%;
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+
+    .carditems-promobox input {
+        width: 70%;
+    }
+
+    .carditems-promobox button {
+        width: 100%;
+        margin-top: 5px;
+        font-size: 14px;
+    }
 }

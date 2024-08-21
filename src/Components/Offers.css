@@ -1,47 +1,97 @@
-.offers{
-    width: 65%;
-    height: 60vh;
+/* offers.css */
+.offers {
+    width: 90%;
+    height: auto;
     display: flex;
     margin: auto;
-    padding: 0px 140px;
-    margin-bottom: 150px;
-    background: linear-gradient(180deg,#fde1ff 0%,#e1ffea22 60%);
+    padding: 20px;
+    margin-bottom: 100px;
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+    overflow: hidden; /* Hide any overflow to prevent horizontal scroll */
 }
 
-.offers-left{
-    flex:1;
+.offers-left {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.offers-left h1{
+.offers-left h1 {
     color: #171717;
-    font-size: 60px;
+    font-size: 40px; /* Decreased font size */
     font-weight: 600;
+    margin-bottom: 20px;
 }
-.offers-left p{
+
+.offers-left p {
     color: #171717;
-    font-size: 22px;
+    font-size: 18px; /* Decreased font size */
     font-weight: 600;
+    margin-bottom: 20px;
 }
-.offers-left button{
-    width: 282px;
-    height: 70px;
-    border-radius: 35px;
+
+.offers-left button {
+    width: 220px; /* Adjusted width */
+    height: 60px; /* Adjusted height */
+    border-radius: 30px; /* Adjusted border radius */
     background-color: #ff4141;
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 18px; /* Decreased font size */
     font-weight: 500;
     margin-top: 30px;
 }
 
-.offers-right{
+.offers-right {
     flex: 1;
     display: flex;
     justify-content: flex-end;
-    
     padding-top: 30px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .offers {
+        width: 95%; /* Adjusted width for medium screens */
+        padding: 10px; /* Adjusted padding for medium screens */
+        margin-bottom: 80px; /* Adjusted bottom margin for medium screens */
+    }
+
+    .offers-left h1 {
+        font-size: 32px; /* Decreased font size for medium screens */
+    }
+
+    .offers-left p {
+        font-size: 16px; /* Decreased font size for medium screens */
+    }
+
+    .offers-left button {
+        width: 200px; /* Adjusted width for medium screens */
+        height: 50px; /* Adjusted height for medium screens */
+        font-size: 16px; /* Decreased font size for medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .offers {
+        width: 100%; /* Full width for small screens */
+        padding: 10px; /* Adjusted padding for small screens */
+        margin-bottom: 50px; /* Adjusted bottom margin for small screens */
+    }
+
+    .offers-left h1 {
+        font-size: 24px; /* Decreased font size for small screens */
+    }
+
+    .offers-left p {
+        font-size: 14px; /* Decreased font size for small screens */
+    }
+
+    .offers-left button {
+        width: 100%; /* Full width for small screens */
+        height: 50px; /* Adjusted height for small screens */
+        font-size: 14px; /* Decreased font size for small screens */
+    }
 }

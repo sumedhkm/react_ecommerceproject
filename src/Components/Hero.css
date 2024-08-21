@@ -1,60 +1,114 @@
-.hero{
+/* hero.css */
+.hero {
     height: 100vh;
-    background:linear-gradient(180deg,#fde1ff,#e1ffea22 60%);
+    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
     display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
-.hero-left{
+
+.hero-left {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    align-items: start;
-    padding: 180px;
+    align-items: flex-start;
+    padding: 60px;
     line-height: 1.1;
+    max-width: 600px; 
 }
-.hero-left h2{
+
+.hero-left h2 {
     color: #090909;
-    font-size: 26px;
+    font-size: 36px; /* Adjusted font size for mobile screens */
     font-weight: 600;
+    margin-bottom: 10px; /* Space below the heading */
 }
 
-.hero-left p{
+.hero-left p {
     color: #171717;
-    font-size: 40px;
+    font-size: 36px; 
     font-weight: 700;
-}
-.hero-hand-icon{
-    display: flex;
-    align-items: center;
-   
-}
-.hero-hand-icon img{
-    width: 50px;
+    margin-bottom: 20px; }
+
+.hero-hand-icon {
+    display: none; 
 }
 
-.hero-latest-btn{
+.hero-latest-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-   
-    width: 310px;
-    height: 70px;
-    border-radius: 75px;
+    width: 380px; /* Adjusted width for mobile screens */
+    height: 105px; /* Adjusted height for mobile screens */
+    border-radius: 25px;
     margin-top: 30px;
     background: #ff4141;
     color: white;
-    font-size:22px;
+    font-size: 36px; /* Adjusted font size for mobile screens */
     font-weight: 500;
 }
-.hero-right{
+
+.hero-right {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
 .hero-right img {
-    width: 400px; /* or any fixed value you prefer */
+    width: 100%; /* Ensure image scales with container width */
+    max-width: 300px; /* Set max width for mobile screens */
     height: auto; 
-    padding-right: 20px;
+    margin-left: 0; /* Remove left margin for very small screens */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-left {
+        padding: 80px; /* Adjusted padding for smaller screens */
+    }
+
+    .hero-left h2 {
+        font-size: 18px; /* Decreased font size for smaller screens */
+    }
+
+    .hero-left p {
+        font-size: 28px; /* Decreased font size for smaller screens */
+    }
+
+    .hero-latest-btn {
+        width: 200px; /* Adjusted width for smaller screens */
+        height: 50px; /* Adjusted height for smaller screens */
+        font-size: 16px; /* Adjusted font size for smaller screens */
+    }
+
+    .hero-right img {
+        width: 200px; /* Adjusted width for smaller screens */
+        margin-left: 10px; /* Reduced margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-left {
+        padding: 60px; /* Further adjusted padding for very small screens */
+    }
+
+    .hero-left h2 {
+        font-size: 16px; /* Further decreased font size */
+    }
+
+    .hero-left p {
+        font-size: 22px; /* Slightly increased font size for readability */
+    }
+
+    .hero-latest-btn {
+        width: 180px; /* Further adjusted width */
+        height: 45px; /* Further adjusted height */
+        font-size: 14px; /* Further adjusted font size */
+    }
+
+    .hero-right img {
+        width: 100%; /* Ensure image scales with container width */
+        margin-left: 0; /* Remove left margin for very small screens */
+    }
 }

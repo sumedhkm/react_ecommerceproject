@@ -1,62 +1,59 @@
 /* Item.css */
 .item {
-    width: 250px;  /* Fixed width for each item */
-    padding: 5px;  /* Reduced padding */
+    width: 250px;
+    padding: 5px;
     border-radius: 5px;
     text-align: center;
-    transition: transform 0.6s;  /* Smooth scaling effect */
-    overflow: hidden;  /* Hide overflow to prevent scrolling */
+    transition: transform 0.6s;
+    overflow: hidden;
 }
 
 .item img {
-    width: 100%;  /* Ensure the image takes full width of the container */
-    height: auto;  /* Maintain aspect ratio */
+    width: 100%;
+    height: auto;
     border-radius: 5px;
-    margin-bottom: 5px;  /* Gap between image and text */
+    margin-bottom: 5px;
 }
 
 .item-price {
     display: flex;
-    flex-direction: column;  /* Stack prices vertically */
-    gap: 5px;  /* Space between new and old price */
+    flex-direction: column;
+    gap: 5px;
 }
 
 .item-price-new {
     color: #374151;
-    font-size: 14px;  /* Smaller font size for new price */
-    /* Removed font-weight to avoid bold text */
+    font-size: 14px;
 }
 
 .item-price-old {
     color: #8c8c8c;
-    font-size: 14px;  /* Smaller font size for old price */
+    font-size: 14px;
     text-decoration: line-through;
-    /* Removed font-weight to avoid bold text */
 }
 
 .item:hover {
-    transform: scale(1.05);  /* Slightly enlarge the item on hover */
+    transform: scale(1.05);
 }
 
 /* Tablet view */
 @media (max-width: 768px) {
     .item {
-        width: 200px;  /* Adjust width for tablet screens */
+        width: 200px;
     }
 
     .item-price-new, .item-price-old {
-        font-size: 12px;  /* Smaller font size for prices on tablet screens */
+        font-size: 12px;
     }
 }
 
-/* Mobile view */
 @media (max-width: 480px) {
     .item {
-        width: 100%;  /* Full width for mobile screens */
-        padding: 10px;  /* Increase padding for better touch target */
+        width: 100%;
+        padding: 10px;
     }
 
     .item-price-new, .item-price-old {
-        font-size: 14px;  /* Slightly larger font size for better readability on mobile */
+        font-size: 14px;
     }
 }
